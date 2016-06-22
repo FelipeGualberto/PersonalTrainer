@@ -16,11 +16,11 @@
 </head>
 <body>
 
-<ul class="nav nav-tabs">
-  <li role="presentation" id="home"><a href="#">Home</a></li>
-  <li role="presentation" id="profile"><a/ href="#">Perfil</a></li>
-  <li role="presentation" id="exit"><a href="#">Sair</a></li>
-</ul>
+	<ul class="nav nav-tabs">
+		<li role="presentation" id="home"><a href="#">Home</a></li>
+		<li role="presentation" id="profile"><a / href="#">Perfil</a></li>
+		<li role="presentation" id="exit"><a href="#">Sair</a></li>
+	</ul>
 	<div class="container">
 		<div class="row">
 
@@ -65,6 +65,7 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="/personaltrainer/resources/js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript"
+	src="/personaltrainer/resources/js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="${js}"></script>
 </html>

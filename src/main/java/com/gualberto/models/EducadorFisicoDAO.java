@@ -2,7 +2,6 @@ package com.gualberto.models;
 
 import com.gualberto.DB.ConnectionFactory;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,38 +14,38 @@ import java.util.logging.Logger;
 
 import javax.servlet.Servlet;
 
-public class EducadorFisicoDAO {
-	ConnectionFactory connection = new ConnectionFactory();
-    Connection conn = connection.getConnection();
-    private Statement statement = null;  
-    PreparedStatement prepared = null;
-    boolean returnUser = false;
-    
-    public boolean verificaLogin(String login, String senha){
-    	try{
-    	 prepared = conn.prepareStatement("select * from educador_fisico where login = ? AND senha = ?");
-    	}catch(Exception e){
-    		 e.printStackTrace();
-    		 Logger.getLogger("EducadorFisicoDAO").log(Level.SEVERE, null, e.toString());
-    	}
-      try {
+public class EducadorFisicoDAO extends BaseDAO {
+	boolean returnUser = false;
+
+	public boolean verificaLogin(String login, String senha) throws Exception {
+		prepared = conn.prepareStatement("select * from educador_fisico where login = ? AND senha = ?");
 		prepared.setString(1, login);
 		prepared.setString(2, senha);
-		ResultSet rs=prepared.executeQuery();
-		Logger.getLogger("EducadorFisicoDAO").log(Level.SEVERE, login);
-		Logger.getLogger("EducadorFisicoDAO").log(Level.SEVERE, senha);
-		
-		if(rs.first()){
+		ResultSet rs = prepared.executeQuery();
+		if (rs.first()) {
 			returnUser = true;
-		}else{
-			
 		}
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		Logger.getLogger("EducadorFisicoDAO").log(Level.SEVERE, null, e.toString());
-		e.printStackTrace();
+		return returnUser;
 	}
-      
-    	return returnUser;
-    }
+	
+	public EducadorFisico GET(String login) throws Exception {
+		EducadorFisico educadorFisico = new EducadorFisico();
+		prepared = conn.prepareStatement("select * from educador_fisico where LOGIN = ?");
+		prepared.setString(1, login);
+		ResultSet rs = prepared.executeQuery();
+		if (rs.first()) {
+		educadorFisico.nome =	rs.getString("NOME");
+		}
+		return educadorFisico ;
+	}
+	
+	public EducadorFisico UPDATE(String nome, String senha,String login) throws Exception {
+		EducadorFisico educadorFisico = new EducadorFisico();
+		prepared = conn.prepareStatement("update set NOME = ?, SENHA = ? where LOGIN = ?");
+		prepared.setString(1, nome);
+		prepared.setString(2, senha);
+		prepared.setString(3, login);
+		prepared.executeUpdate();
+		return educadorFisico ;
+	}
 }

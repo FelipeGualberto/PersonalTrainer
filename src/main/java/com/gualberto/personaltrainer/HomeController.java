@@ -33,7 +33,7 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String homePOST(Locale locale, Model model, HttpServletRequest request) {
+	public String homePOST(Locale locale, Model model, HttpServletRequest request) throws Exception {
 		HttpSession session = request.getSession();
 		String login = request.getParameter("login");
 		String password = request.getParameter("senha");
