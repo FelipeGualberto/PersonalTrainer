@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.gualberto.models.Aluno;
 import com.gualberto.models.AlunoDAO;
@@ -28,6 +29,12 @@ public class ListClientsController {
 		return "list";
 	}
 	
+	@RequestMapping(value = "/listusers", method = RequestMethod.POST)
+	public String homePOST(Locale locale, Model model, HttpServletRequest request) throws Throwable {
+				
+		return "redirect:/";
+	}
+	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(Locale locale, Model model, HttpServletRequest request) {
 		request.getSession().invalidate();
@@ -36,6 +43,10 @@ public class ListClientsController {
 	
 	@RequestMapping(value = "/perfilaluno", method = RequestMethod.POST)
 	public String perfilaluno(Locale locale, Model model, HttpServletRequest request) {
-		return "lasdasd";
+		return "profile";
+	}
+	@RequestMapping(value = "/profile", method = RequestMethod.GET)
+	public String perfilprof(Locale locale, Model model, HttpServletRequest request) {
+		return "profile";
 	}
 }

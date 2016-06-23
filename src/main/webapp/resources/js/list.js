@@ -7,11 +7,6 @@ $(document).ready(function() {
 		window.location.replace("/personaltrainer/profile");
 	});
 	$('#aluno').click(function() {
-		var request;
-		request = $.ajax({
-	        url: "/personaltrainer/perfilaluno",
-	        type: "post",
-	    });
+			$("#form").submit();
 	});
-
 });

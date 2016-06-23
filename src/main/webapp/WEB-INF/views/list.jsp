@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -19,7 +20,8 @@
 	<ul class="nav nav-tabs">
 		<li role="presentation" id="home"><a href="">Home</a></li>
 		<li role="presentation" id="profile"><a / href="#">Perfil</a></li>
-		<li role="presentation" id="exit"><a href="/personaltrainer/logout">Sair</a></li>
+		<li role="presentation" id="exit"><a
+			href="/personaltrainer/logout">Sair</a></li>
 	</ul>
 	<div class="container">
 		<div class="row">
@@ -48,7 +50,14 @@
 										<td><input type="checkbox" id="checkbox1"> <label
 											for="checkbox1"></label></td>
 										<td id="aluno">
-											<h6 >${users.nome} Peso: ${users.peso} Altura:  ${users.altura}</h6>
+											<h6>${users.nome}Peso:${users.peso}Altura:
+												${users.altura}</h6>
+											<form style="display: hidden"
+												action="/personaltrainer/perfilaluno" method="POST"
+												id="form">
+												<input type="hidden" id="var1" name="var1" value="" /> <input
+													type="hidden" id="var2" name="var2" value="" />
+											</form>
 										</td>
 									</tbody>
 								</c:forEach>

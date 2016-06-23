@@ -18,8 +18,7 @@
 <body>
 	<section class="container">
 			<section class="login-form">
-				<form method="post" action="" role="login">
-				<img src='<spring:url value="/resources/images/logo.png"></spring:url>' class="img-responsive" alt=""/>	
+				<form method="post" action="" role="login">	
 					<input type="email" name="login" placeholder="Email" required class="form-control input-lg" />
 					<input type="password" name="senha" placeholder="Password" required class="form-control input-lg" />
 					<button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
