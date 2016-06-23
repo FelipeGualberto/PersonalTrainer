@@ -17,9 +17,9 @@
 <body>
 
 	<ul class="nav nav-tabs">
-		<li role="presentation" id="home"><a href="#">Home</a></li>
+		<li role="presentation" id="home"><a href="">Home</a></li>
 		<li role="presentation" id="profile"><a / href="#">Perfil</a></li>
-		<li role="presentation" id="exit"><a href="#">Sair</a></li>
+		<li role="presentation" id="exit"><a href="/personaltrainer/logout">Sair</a></li>
 	</ul>
 	<div class="container">
 		<div class="row">
@@ -43,13 +43,16 @@
 						</div>
 						<div class="table-container">
 							<table class="table table-filter">
-								<tbody>
-									<td><input type="checkbox" id="checkbox1"> <label
-										for="checkbox1"></label></td>
-									<td>
-										<h6>Felipe Gualberto</h6>
-									</td>
-								</tbody>
+								<c:forEach items="${list_users}" var="users">
+									<tbody>
+										<td><input type="checkbox" id="checkbox1"> <label
+											for="checkbox1"></label></td>
+										<td id="aluno">
+											<h6 >${users.nome} Peso: ${users.peso} Altura:  ${users.altura}</h6>
+										</td>
+									</tbody>
+								</c:forEach>
+
 							</table>
 						</div>
 					</div>

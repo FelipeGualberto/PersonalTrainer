@@ -6,10 +6,10 @@ $(document).ready(function() {
 	$('#profile').click(function() {
 		window.location.replace("/personaltrainer/profile");
 	});
-	$('#exit').click(function() {
+	$('#aluno').click(function() {
 		var request;
 		request = $.ajax({
-	        url: "/personaltrainer/logout",
+	        url: "/personaltrainer/perfilaluno",
 	        type: "post",
 	    });
 	});

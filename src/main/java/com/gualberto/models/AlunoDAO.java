@@ -6,10 +6,10 @@ import java.util.List;
 
 public class AlunoDAO extends BaseDAO {
 
-	public List<Aluno> GETALL(String id) throws Exception {
+	public List<Aluno> GETALL(int id) throws Exception {
 
 		prepared = conn.prepareStatement("select * from aluno where id_educador_fisico=?");
-		prepared.setString(1, id );
+		prepared.setString(1, String.valueOf(id));
 		ResultSet rs = prepared.executeQuery();
 		List<Aluno> alunolist = new ArrayList<Aluno>();
 		while (rs.next()) {

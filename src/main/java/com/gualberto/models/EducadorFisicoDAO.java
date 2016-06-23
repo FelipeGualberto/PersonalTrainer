@@ -35,6 +35,7 @@ public class EducadorFisicoDAO extends BaseDAO {
 		ResultSet rs = prepared.executeQuery();
 		if (rs.first()) {
 		educadorFisico.nome =	rs.getString("NOME");
+		educadorFisico.ID = rs.getInt("ID");
 		}
 		return educadorFisico ;
 	}

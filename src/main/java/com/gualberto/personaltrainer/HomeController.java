@@ -41,6 +41,7 @@ public class HomeController {
 		EducadorFisicoDAO educadorFisicoDAO = new EducadorFisicoDAO();
 		if (educadorFisicoDAO.verificaLogin(login, password)) {
 			session.setAttribute(isLogged, true);
+			session.setAttribute("ID", educadorFisicoDAO.GET(login).getID());
 			return "redirect:/listusers";
 		} else {
 			return "home";
