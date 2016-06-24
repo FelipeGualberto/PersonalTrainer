@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.gualberto.models.Aluno;
 import com.gualberto.models.AlunoDAO;
+import com.gualberto.models.ListExercicioDAO;
+import com.gualberto.models.ListaExercicio;
 
 @Controller
 public class HomeController {
@@ -26,6 +28,8 @@ public class HomeController {
 		AlunoDAO alunoDAO = new AlunoDAO();
 		int id = (Integer) session.getAttribute("ID");
 		model.addAttribute("list_users", alunoDAO.GETALL(id));
+		ListExercicioDAO listExercicioDAO = new ListExercicioDAO();
+		listExercicioDAO.getById(1);
 		return "list";
 	}
 	
@@ -40,12 +44,12 @@ public class HomeController {
 		return "redirect:/";
 	}
 	
-	@RequestMapping(value = "/perfilaluno", method = RequestMethod.POST)
+	@RequestMapping(value = "/profilealuno", method = RequestMethod.POST)
 	public String perfilaluno(Locale locale, Model model, HttpServletRequest request) {
-		return "profile";
+		return "profilealuno";
 	}
-	@RequestMapping(value = "/profile", method = RequestMethod.GET)
+	@RequestMapping(value = "/profileprofessor", method = RequestMethod.GET)
 	public String perfilprof(Locale locale, Model model, HttpServletRequest request) {
-		return "profile";
+		return "profileprofessor";
 	}
 }

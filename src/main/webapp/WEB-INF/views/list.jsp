@@ -19,7 +19,7 @@
 
 	<ul class="nav nav-tabs">
 		<li role="presentation" id="home"><a href="">Home</a></li>
-		<li role="presentation" id="profile"><a / href="#">Perfil</a></li>
+		<li role="presentation" id="profile"><a/href="#">Perfil</a></li>
 		<li role="presentation" id="exit"><a
 			href="/personaltrainer/logout">Sair</a></li>
 	</ul>
@@ -53,7 +53,7 @@
 											<h6>${users.nome}Peso:${users.peso}Altura:
 												${users.altura}</h6>
 											<form style="display: hidden"
-												action="/personaltrainer/perfilaluno" method="POST"
+												action="/personaltrainer/profilealuno" method="POST"
 												id="form">
 												<input type="hidden" id="var1" name="var1" value="" /> <input
 													type="hidden" id="var2" name="var2" value="" />
